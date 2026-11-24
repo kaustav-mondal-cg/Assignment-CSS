@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ludo Board</title>
+  <style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.bg {
+    min-height: 100vh;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.ludo {
+    width: min(92vw, 92vh, 600px);
+    height: min(92vw, 92vh, 600px);
+    display: grid;
+    grid-template-columns: 6fr 3fr 6fr;
+    grid-template-rows: 6fr 3fr 6fr;
+    border: 2px solid #000;
+    background: #fff;
+}
+
+.yard {
+    padding: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yard.r {
+    background: #d7261e;
+}
+
+.yard.g {
+    background: #1e7e22;
+}
+
+.yard.b {
+    background: #0040d6;
+}
+
+.yard.y {
+    background: #fef200;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    padding: 12%;
+}
+
+.tk {
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.tk.r {
+    border: clamp(3px, 0.8vw, 6px) solid #d7261e;
+}
+
+.tk.g {
+    border: clamp(3px, 0.8vw, 6px) solid #1e7e22;
+}
+
+.tk.b {
+    border: clamp(3px, 0.8vw, 6px) solid #0040d6;
+}
+
+.tk.y {
+    border: clamp(3px, 0.8vw, 6px) solid #fef200;
+}
+
+.vpath {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.hpath {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.cen {
+    background: conic-gradient(from -45deg, #1e7e22 90deg, #fef200 90deg 180deg, #0040d6 180deg 270deg, #d7261e 270deg);
+    border: 1px solid #000;
+}
+
+.c {
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(10px, 2vw, 16px);
+    color: #000;
+}
+
+.c.r {
+    background: #d7261e;
+}
+
+.c.g {
+    background: #1e7e22;
+}
+
+.c.b {
+    background: #0040d6;
+}
+
+.c.y {
+    background: #fef200;
+}
+  </style>
+</head>
+
+<body class="bg">
+  <div class="ludo">
+    <div class="yard r">
+      <div class="box">
+        <span class="tk r"></span><span class="tk r"></span>
+        <span class="tk r"></span><span class="tk r"></span>
+      </div>
+    </div>
+    <div class="vpath">
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c g"></div>
+      <div class="c g st">&#9733;</div>
+      <div class="c g st">&#9733;</div>
+      <div class="c g"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c g"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c g"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c g"></div>
+      <div class="c"></div>
+    </div>
+    <div class="yard g">
+      <div class="box">
+        <span class="tk g"></span><span class="tk g"></span>
+        <span class="tk g"></span><span class="tk g"></span>
+      </div>
+    </div>
+    <div class="hpath">
+      <div class="c"></div>
+      <div class="c r st">&#9733;</div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c r"></div>
+      <div class="c r"></div>
+      <div class="c r"></div>
+      <div class="c r"></div>
+      <div class="c r"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c r st">&#9733;</div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+    </div>
+    <div class="cen"></div>
+    <div class="hpath">
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c y st">&#9733;</div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c y"></div>
+      <div class="c y"></div>
+      <div class="c y"></div>
+      <div class="c y"></div>
+      <div class="c y"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c y st">&#9733;</div>
+      <div class="c"></div>
+    </div>
+    <div class="yard b">
+      <div class="box">
+        <span class="tk b"></span><span class="tk b"></span>
+        <span class="tk b"></span><span class="tk b"></span>
+      </div>
+    </div>
+    <div class="vpath">
+      <div class="c"></div>
+      <div class="c b"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c b"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c b"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c b"></div>
+      <div class="c b st">&#9733;</div>
+      <div class="c b st">&#9733;</div>
+      <div class="c b"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+      <div class="c"></div>
+    </div>
+    <div class="yard y">
+      <div class="box">
+        <span class="tk y"></span><span class="tk y"></span>
+        <span class="tk y"></span><span class="tk y"></span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
